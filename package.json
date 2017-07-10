@@ -1,0 +1,16 @@
+{
+  "name": "app_requirejs",
+  "version": "1.0.0",
+  "description": "Just first app for using require.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies" : {
+    "connect" : "latest",
+    "serve-static" : "latest"
+  }
+}
