@@ -1,5 +1,5 @@
-require(["purchase"],function(){
-	var flag = purchaseProduct();
+require(["purchase"],function(purchase){
+	var flag = purchase.purchaseProduct();
 	console.log(" RESULT of Purchase Product ",flag);
 });
 
