@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trying templating in jQuery</title>
+		<link href="/lib/bootstrap.css" rel="stylesheet">
+		<link href="/lib/bootstrap-theme.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h3>Templating Using jQuery and Underscore</h3>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="studentInfo"></div>			
+				</div>
+			</div>
+		</div>
+
+		
+
+		<script type="text/javaScript" src="/lib/jquery-3.2.1.js"></script>
+		<script type="text/javaScript" src="/lib/underscore.js"></script>
+		<script type="text/javaScript" src="/lib/bootstrap.js"></script>
+
+		<script type="text/javaScript">
+			$(document).ready(main);
+
+			function main(){
+				console.log("jQuery is loaded");
+
+				var personList = [];
+				personList.push({
+					name : "Tom Hanks",
+					country : "United States of America",
+					hobbies : "Acting"
+				});
+
+				personList.push({
+					name : "Charles Xaviers",
+					country : "United States of America",
+					hobbies : "Teaching, Guidance, Motivator"
+				});
+
+				personList.push({
+					name : "Uxbil Ayahati",
+					country : "Spain",
+					hobbies : "Movies, Reading, Writting"
+				});
+
+				personList.push({
+					name : "Milan Jain",
+					country : "India",
+					hobbies : "Reading"
+				});
+
+				
+
+				
+				$.get("/templatingPractise/tpl1.html",function(request){
+					
+					var compiled =  _.template(request);
+				
+					var htmlString = compiled({
+							"persons" : personList
+					});
+					//console.log(htmlString);
+					$("div.studentInfo").html(htmlString);
+				});
+			}// end of main
+		</script>
+	</body>
+</html>

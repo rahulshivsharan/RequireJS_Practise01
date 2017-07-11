@@ -1,0 +1,17 @@
+
+<table class="table table-bordered">
+	<tr>
+		<th>Name</th>
+		<th>Country</th>
+		<th>Hobbies</th>
+	</tr>
+
+	<% _.each(persons,function(person,index,list){%>
+	<tr>
+		<td><%= person.name %></td>
+		<td><%= person.country %></td>
+		<td><%= person.hobbies %></td>
+	</tr>	
+	<%}); %>
+		
+</table>
